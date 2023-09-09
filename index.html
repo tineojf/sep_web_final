@@ -18,15 +18,16 @@
 
     <div>
       <section class="section-left">
-        <form action="" method="post">
+        <form action="">
           <div class="mb-3">
             <label for="InputText" class="form-label">Nombre completo</label>
             <input
-              type="email"
+              type="text"
               class="form-control"
               id="InputText"
               aria-describedby="emailHelp"
               placeholder="Ingresa tu nombre"
+              required
             />
           </div>
 
@@ -35,11 +36,12 @@
               >Apellidos completo</label
             >
             <input
-              type="email"
+              type="text"
               class="form-control"
               id="InputText2"
               aria-describedby="emailHelp"
               placeholder="Ingresa tu apellido"
+              required
             />
           </div>
 
@@ -62,19 +64,8 @@
                 class="form-check-input"
                 type="radio"
                 name="flexRadioDefault"
-                id="flexRadioDefault0"
-                checked
-              />
-              <label class="form-check-label" for="flexRadioDefault0">
-                Prefiero no decirlo
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
                 id="flexRadioDefault1"
+                checked
               />
               <label class="form-check-label" for="flexRadioDefault1">
                 Hombre
@@ -101,6 +92,7 @@
               aria-label="Peso en kilogramos (con decimales)"
               placeholder="Ej. 70.5"
               step="0.1"
+              required
             />
             <span class="input-group-text"> kg</span>
           </div>
@@ -113,9 +105,13 @@
               aria-label="Talla en centímetros (con decimales)"
               placeholder="Ej. 1.70"
               step="0.1"
+              required
             />
             <span class="input-group-text"> m</span>
           </div>
+
+          <!-- Boton -->
+          <button type="submit" class="btn btn-primary">Calcular</button>
         </form>
       </section>
 
