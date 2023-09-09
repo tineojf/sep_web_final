@@ -19,7 +19,7 @@
         <img src="./assets/images/imc.png" class="img-thumbnail" alt="img_imc" width="250px" />
       </div>
 
-      <form action="" method="POST">
+      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <div class="mb-3">
           <label for="InputText" class="form-label">Nombre completo</label>
           <input type="text" class="form-control" name="nombre" id="InputText" aria-describedby="emailHelp" placeholder="Ingresa tu nombre" required />
@@ -59,8 +59,8 @@
 
         <div class="input-group mb-3">
           <label for="InputDate" class="form-label">Talla </label>
-          <input type="number" class="form-control" name="talla" aria-label="Talla en centímetros (con decimales)" placeholder="Ej. 1.70" step="0.01" required />
-          <span class="input-group-text"> m</span>
+          <input type="number" class="form-control" name="talla" aria-label="Talla en centímetros (con decimales)" placeholder="Ej. 170" step="1" required />
+          <span class="input-group-text"> cm</span>
         </div>
 
         <div class="div_button">
@@ -115,12 +115,14 @@
         $nacimiento = $_POST["nacimiento"];
         $genero = $_POST["genero"];
         $peso = floatval($_POST["peso"]);
-        $talla = floatval($_POST["talla"]);
+        $talla = floatval($_POST["talla"]) / 100; // Convertir de cm a m
 
+        // Calcular el IMC
         $imc = $peso / ($talla * $talla);
 
+        // Determinar la categoría
         $categoria = "";
-        if ($genero == "hombre") {
+        if ($genero === "hombre") {
           if ($imc < 20) {
             $categoria = "Bajo peso";
           } elseif ($imc >= 20 && $imc <= 24.9) {
@@ -145,21 +147,21 @@
             $categoria = "Obesidad muy severa";
           }
         }
+
+        // Mostrar resultados
+        echo '<h2>Resultado</h2>';
+        echo '<div class="alert" role="alert">';
+        echo "<p><strong>Nombre:</strong> $nombre</p>";
+        echo "<p><strong>Apellidos:</strong> $apellido</p>";
+        echo "<p><strong>Fecha de nacimiento:</strong> $nacimiento</p>";
+        echo "<p><strong>Género:</strong> $genero</p>";
+        echo "<p><strong>Peso:</strong> $peso kg</p>";
+        echo "<p><strong>Talla:</strong> " . ($talla * 100) . " cm</p>";
+        echo "<p><strong>IMC:</strong> " . number_format($imc, 2) . "</p>";
+        echo "<p><strong>Interpretación:</strong> $categoria</p>";
+        echo '</div>';
       }
       ?>
-
-      <h2>Resultado</h2>
-      <!-- añadir alert-primary -->
-      <div class="alert" role="alert">
-        <p><strong>Nombre:</strong> <span id="nombre"><?php echo $nombre; ?></span></p>
-        <p><strong>Apellidos:</strong> <span id="apellidos"><?php echo $apellido; ?></span></p>
-        <p><strong>Fecha de nacimiento:</strong> <span id="fecha"><?php echo $nacimiento; ?></span></p>
-        <p><strong>Género:</strong> <span id="genero"><?php echo $genero; ?></span></p>
-        <p><strong>Peso:</strong> <span id="peso"><?php echo $peso; ?> kg</span></p>
-        <p><strong>Talla:</strong> <span id="talla"><?php echo $talla; ?> m</span></p>
-        <p><strong>IMC:</strong> <span id="imc"><?php echo number_format($imc, 2); ?></span></p>
-        <p><strong>Interpretación:</strong> <span id="interpretacion"><?php echo $categoria; ?></span></p>
-      </div>
     </section>
   </div>
 
