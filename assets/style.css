@@ -37,3 +37,10 @@ body > div > section.section-left > form > div.div_button {
 body > div > section.section-right > h2 {
   margin-top: 40px;
 }
+
+@media (max-width: 768px) {
+  body > div {
+    flex-direction: column; /* Cambiar a dirección de columna */
+    align-items: stretch; /* Ajustar alineación a estirar los elementos */
+  }
+}

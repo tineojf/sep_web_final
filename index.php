@@ -150,7 +150,7 @@
 
         // Mostrar resultados
         echo '<h2>Resultado</h2>';
-        echo '<div class="alert" role="alert">';
+        echo '<div class="alert alert-primary" role="alert">';
         echo "<p><strong>Nombre:</strong> $nombre</p>";
         echo "<p><strong>Apellidos:</strong> $apellido</p>";
         echo "<p><strong>Fecha de nacimiento:</strong> $nacimiento</p>";
