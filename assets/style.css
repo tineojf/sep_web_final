@@ -1,3 +1,9 @@
+body > h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: darkolivegreen;
+}
+
 body > div {
   display: flex;
   flex-direction: row;
@@ -26,4 +32,8 @@ body > div > section.section-left > form > div.input-group > label {
 
 body > div > section.section-left > form > div.div_button {
   text-align: center;
+}
+
+body > div > section.section-right > h2 {
+  margin-top: 40px;
 }
