@@ -6,3 +6,15 @@ body > div {
   align-items: center;
   align-content: stretch;
 }
+
+body > div > section.section-left > form > div.mb-3 {
+  padding-bottom: 6px;
+}
+
+body > div > section.section-left > form > div.input-group > label {
+  padding-right: 20px;
+}
+
+body > div > section.section-left > form > div.div_button  {
+  text-align: center;
+}
