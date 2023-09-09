@@ -7,6 +7,15 @@ body > div {
   align-content: stretch;
 }
 
+body > div > section.section-left > h2 {
+  margin-top: 20px;
+}
+
+body > div > section.section-left > div.div_image {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 body > div > section.section-left > form > div.mb-3 {
   padding-bottom: 6px;
 }
@@ -15,6 +24,6 @@ body > div > section.section-left > form > div.input-group > label {
   padding-right: 20px;
 }
 
-body > div > section.section-left > form > div.div_button  {
+body > div > section.section-left > form > div.div_button {
   text-align: center;
 }
